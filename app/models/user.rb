@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   #ensure email uniqueness.  Needed because not all db adapters use case-sensitive indicies
-  before_save { |user| user.email = email.downcase }
+  before_save { self.email.downcase! }
   
   #validate name
   validates :name, presence: true, length: { maximum: 50 }
