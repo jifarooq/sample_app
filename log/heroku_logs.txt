@@ -1,0 +1,102 @@
+2014-09-26T22:15:57.257955+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=c1590cc4-a067-4b3f-82ee-928b5d7752df fwd="96.229.206.91" dyno=web.1 connect=0ms service=5ms status=301 bytes=290
+2014-09-26T22:15:57.805236+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=fa5766fd-02b3-4c59-a586-8d3d183322dd fwd="96.229.206.91" dyno=web.1 connect=3ms service=42ms status=200 bytes=2601
+2014-09-26T22:15:57.800302+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+2014-09-26T22:15:57.765732+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 22:15:57 +0000
+2014-09-26T22:15:57.802646+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+2014-09-26T22:15:57.801980+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.4ms)
+2014-09-26T22:15:57.949785+00:00 heroku[router]: at=info method=GET path="/assets/application-9758fb665ec05e28b5959fd9afec66eb.css" host=priegnym.herokuapp.com request_id=3f414f39-45f7-4cf2-85bd-af6119736261 fwd="96.229.206.91" dyno=web.1 connect=1ms service=9ms status=200 bytes=72921
+2014-09-26T22:15:58.165415+00:00 heroku[router]: at=info method=GET path="/assets/application-a084ca4a1cc10e3bbd31871565af7dec.js" host=priegnym.herokuapp.com request_id=43a9eae1-241d-4247-8f00-bf0b391e9526 fwd="96.229.206.91" dyno=web.1 connect=4ms service=8ms status=200 bytes=104207
+2014-09-26T22:15:58.995978+00:00 heroku[router]: at=info method=GET path="/assets/rails-a3386665c05a2d82f711a4aaa72d247c.png" host=priegnym.herokuapp.com request_id=b8a5f3e9-1ffc-44c1-92c6-fdddd855ac03 fwd="96.229.206.91" dyno=web.1 connect=0ms service=4ms status=200 bytes=6951
+2014-09-26T22:15:59.134680+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=priegnym.herokuapp.com request_id=696d98e0-c91e-485f-9f5f-a1156cf22975 fwd="96.229.206.91" dyno=web.1 connect=0ms service=5ms status=200 bytes=317
+2014-09-26T22:17:39.053051+00:00 app[web.1]: LINE 5:              WHERE a.attrelid = '"users"'::regclass
+2014-09-26T22:17:39.053059+00:00 app[web.1]:               FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-26T22:17:39.053070+00:00 app[web.1]:   app/controllers/users_controller.rb:8:in `new'
+2014-09-26T22:17:39.025721+00:00 app[web.1]: Started GET "/signup" for 96.229.206.91 at 2014-09-26 22:17:39 +0000
+  #2014-09-26T22:17:39.051591+00:00 app[web.1]: Completed 500 Internal Server Error in 23ms
+2014-09-26T22:17:39.053057+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-26T22:17:39.053062+00:00 app[web.1]:              WHERE a.attrelid = '"users"'::regclass
+2014-09-26T22:17:39.028707+00:00 app[web.1]: Processing by UsersController#new as HTML
+2014-09-26T22:17:39.053046+00:00 app[web.1]: 
+2014-09-26T22:17:39.053053+00:00 app[web.1]:                                         ^
+2014-09-26T22:17:39.053055+00:00 app[web.1]: :             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+  #2014-09-26T22:17:39.053049+00:00 app[web.1]: ActiveRecord::StatementInvalifd (PGError: ERROR:  relation "users" does not exist
+2014-09-26T22:17:39.055215+00:00 heroku[router]: at=info method=GET path="/signup" host=priegnym.herokuapp.com request_id=deec63fc-413a-4014-8189-6cd5329bea70 fwd="96.229.206.91" dyno=web.1 connect=0ms service=33ms status=500 bytes=1008
+2014-09-26T22:17:39.053064+00:00 app[web.1]:                AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-26T22:17:39.053075+00:00 app[web.1]: 
+2014-09-26T22:17:39.053061+00:00 app[web.1]:                 ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-26T22:17:39.053066+00:00 app[web.1]:              ORDER BY a.attnum
+2014-09-26T22:17:39.053072+00:00 app[web.1]:   app/controllers/users_controller.rb:8:in `new'
+2014-09-26T22:17:39.053073+00:00 app[web.1]: 
+2014-09-26T22:17:39.053068+00:00 app[web.1]: ):
+2014-09-26T22:17:45.058425+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=c7b45017-475a-44e5-8456-fe3d974a40aa fwd="96.229.206.91" dyno=web.1 connect=1ms service=11ms status=200 bytes=2319
+2014-09-26T22:17:45.052775+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T22:17:45.053919+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+2014-09-26T22:17:45.055923+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.4ms)
+2014-09-26T22:17:45.056688+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+2014-09-26T22:17:45.055478+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T22:17:45.056450+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T22:17:46.022297+00:00 heroku[router]: at=info method=GET path="/assets/application-9758fb665ec05e28b5959fd9afec66eb.css" host=priegnym.herokuapp.com request_id=53c8d870-99da-4da5-b708-838241910fc1 fwd="96.229.206.91" dyno=web.1 connect=1ms service=8ms status=200 bytes=72921
+2014-09-26T22:17:45.050420+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 22:17:45 +0000
+2014-09-26T22:17:46.911356+00:00 heroku[router]: at=info method=GET path="/assets/application-a084ca4a1cc10e3bbd31871565af7dec.js" host=priegnym.herokuapp.com request_id=406b6763-f1b4-412a-8d4c-b0c1b94088f4 fwd="96.229.206.91" dyno=web.1 connect=2ms service=13ms status=200 bytes=104207
+2014-09-26T22:17:48.528162+00:00 heroku[router]: at=info method=GET path="/assets/rails-a3386665c05a2d82f711a4aaa72d247c.png" host=priegnym.herokuapp.com request_id=3fa7b88b-69b1-4e28-b140-b2a695bba302 fwd="96.229.206.91" dyno=web.1 connect=2ms service=8ms status=200 bytes=6951
+2014-09-26T22:17:50.863958+00:00 heroku[router]: at=info method=GET path="/about" host=priegnym.herokuapp.com request_id=26b74252-e941-4dda-9632-c6f5cb6ecf6b fwd="96.229.206.91" dyno=web.1 connect=2ms service=12ms status=200 bytes=2177
+2014-09-26T22:17:50.854782+00:00 app[web.1]: Started GET "/about" for 96.229.206.91 at 2014-09-26 22:17:50 +0000
+2014-09-26T22:17:50.858997+00:00 app[web.1]:   Ren
+dered static_pages/about.html.erb within layouts/application (0.4ms)
+2014-09-26T22:17:50.860880+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.5ms)
+2014-09-26T22:17:50.861554+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+2014-09-26T22:17:50.857097+00:00 app[web.1]: Processing by StaticPagesController#about as HTML
+2014-09-26T22:17:50.860225+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T22:17:50.861330+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T22:17:55.771899+00:00 app[web.1]: Processing by StaticPagesController#contact as HTML
+2014-09-26T22:17:55.776092+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T22:17:55.777700+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.4ms)
+2014-09-26T22:17:55.774302+00:00 app[web.1]:   Rendered static_pages/contact.html.erb within layouts/application (0.6ms)
+2014-09-26T22:17:55.777042+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.8ms)
+2014-09-26T22:17:55.778048+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+2014-09-26T22:17:55.767808+00:00 app[web.1]: Started GET "/contact" for 96.229.206.91 at 2014-09-26 22:17:55 +0000
+2014-09-26T22:18:03.227036+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T22:18:03.229015+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T22:18:03.229965+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T22:18:03.242211+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=a38764b6-52c3-43bd-b6d4-1d731b697f8b fwd="96.229.206.91" dyno=web.1 connect=2ms service=21ms status=200 bytes=2319
+2014-09-26T22:18:03.224387+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 22:18:03 +0000
+2014-09-26T22:18:03.228034+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+2014-09-26T22:18:03.229493+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.3ms)
+2014-09-26T22:18:03.230118+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+2014-09-26T22:18:04.888894+00:00 heroku[router]: at=info method=GET path="/help" host=priegnym.herokuapp.com request_id=2d800bd4-1b16-43cf-bc78-3ede1670f425 fwd="96.229.206.91" dyno=web.1 connect=2ms service=16ms status=200 bytes=2147
+2014-09-26T22:18:04.876118+00:00 app[web.1]: Started GET "/help" for 96.229.206.91 at 2014-09-26 22:18:04 +0000
+2014-09-26T22:18:04.878811+00:00 app[web.1]: Processing by StaticPagesController#help as HTML
+2014-09-26T22:18:04.881603+00:00 app[web.1]:   Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+2014-09-26T22:18:04.884505+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.7ms)
+2014-09-26T22:18:04.885625+00:00 app[web.1]: Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+2014-09-26T22:18:04.883551+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.1ms)
+2014-09-26T22:18:04.885301+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.5ms)
+2014-09-26T22:18:08.310406+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=f51c1975-be3d-41f9-aa11-6d9e82a6dd4d fwd="96.229.206.91" dyno=web.1 connect=2ms service=13ms status=304 bytes=400
+2014-09-26T22:18:08.447850+00:00 heroku[router]: at=info method=GET path="/assets/application-a084ca4a1cc10e3bbd31871565af7dec.js" host=priegnym.herokuapp.com request_id=8f7b0d87-9de9-46fb-9696-8a7a4b4856d1 fwd="96.229.206.91" dyno=web.1 connect=2ms service=6ms status=304 bytes=222
+2014-09-26T22:18:08.300188+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 22:18:08 +0000
+2014-09-26T22:18:08.305421+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.3ms)
+2014-09-26T22:18:08.303881+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+2014-09-26T22:18:08.302784+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T22:18:08.304960+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T22:18:08.306084+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+2014-09-26T22:18:08.305943+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T22:18:09.819045+00:00 heroku[router]: at=info method=GET path="/signup" host=priegnym.herokuapp.com request_id=ec4e989c-864e-47e6-84b3-248b538bc118 fwd="96.229.206.91" dyno=web.1 connect=1ms service=12ms status=500 bytes=1008
+2014-09-26T22:18:09.813203+00:00 app[web.1]: Processing by UsersController#new as HTML
+2014-09-26T22:18:09.817057+00:00 app[web.1]: LINE 5:              WHERE a.attrelid = '"users"'::regclass
+2014-09-26T22:18:09.817058+00:00 app[web.1]:                                         ^
+2014-09-26T22:18:09.817059+00:00 app[web.1]: :             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2014-09-26T22:18:09.817061+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2014-09-26T22:18:09.817062+00:00 app[web.1]:               FROM pg_attribute a LEFT JOIN pg_attrdef d
+2014-09-26T22:18:09.817064+00:00 app[web.1]:                 ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2014-09-26T22:18:09.817065+00:00 app[web.1]:              WHERE a.attrelid = '"users"'::regclass
+2014-09-26T22:18:09.817067+00:00 app[web.1]:                AND a.attnum > 0 AND NOT a.attisdropped
+2014-09-26T22:18:09.817068+00:00 app[web.1]:              ORDER BY a.attnum
+2014-09-26T22:18:09.817069+00:00 app[web.1]: ):
+2014-09-26T22:18:09.817070+00:00 app[web.1]:   app/controllers/users_controller.rb:8:in `new'
+2014-09-26T22:18:09.817072+00:00 app[web.1]:   app/controllers/users_controller.rb:8:in `new'
+2014-09-26T22:18:09.817073+00:00 app[web.1]: 
+2014-09-26T22:18:09.817074+00:00 app[web.1]: 
+2014-09-26T22:18:09.810888+00:00 app[web.1]: Started GET "/signup" for 96.229.206.91 at 2014-09-26 22:18:09 +0000
+2014-09-26T22:18:09.815582+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
+2014-09-26T22:18:09.817052+00:00 app[web.1]: 
+2014-09-26T22:18:09.817055+00:00 app[web.1]: ActiveRecord::StatementInvalid (PGError: ERROR:  relation "users" does not exist

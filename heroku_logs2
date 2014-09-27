@@ -1,0 +1,101 @@
+2014-09-26T23:50:17.132121+00:00 heroku[web.1]: State changed from starting to up
+2014-09-26T23:50:17.949495+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=376376b2-fd51-42ca-8e3c-7d4d829fd442 fwd="96.229.206.91" dyno=web.1 connect=4ms service=98ms status=304 bytes=400
+2014-09-26T23:50:17.859364+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 23:50:17 +0000
+2014-09-26T23:50:17.943732+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.9ms)
+2014-09-26T23:50:17.945248+00:00 app[web.1]: Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+2014-09-26T23:50:17.936671+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+2014-09-26T23:50:17.929463+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T23:50:17.941423+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.3ms)
+2014-09-26T23:50:17.944980+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.7ms)
+2014-09-26T23:50:22.202408+00:00 app[web.1]: Processing by UsersController#new as HTML
+2014-09-26T23:50:22.278680+00:00 app[web.1]: Completed 500 Internal Server Error in 76ms
+2014-09-26T23:50:22.278369+00:00 app[web.1]:   Rendered users/new.html.erb within layouts/application (3.9ms)
+2014-09-26T23:50:22.280748+00:00 app[web.1]: 
+2014-09-26T23:50:22.280753+00:00 app[web.1]:   * "/app/app/views"
+2014-09-26T23:50:22.280751+00:00 app[web.1]: ActionView::Template::Error (Missing partial shared/error_messages with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+2014-09-26T23:50:22.280760+00:00 app[web.1]:     8: 	  <%= render 'shared/error_messages' %>
+2014-09-26T23:50:22.280756+00:00 app[web.1]:     5:   <div class="span6 offset3">
+2014-09-26T23:50:22.280763+00:00 app[web.1]:     10:       <%= f.label :name %>
+2014-09-26T23:50:22.280759+00:00 app[web.1]:     7: 	  
+2014-09-26T23:50:22.280762+00:00 app[web.1]:     9: 
+2014-09-26T23:50:22.280766+00:00 app[web.1]:   app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___607673999602742100_69933730431660'
+2014-09-26T23:50:22.280754+00:00 app[web.1]: ):
+2014-09-26T23:50:22.280769+00:00 app[web.1]: 
+2014-09-26T23:50:22.195895+00:00 app[web.1]: Started GET "/signup" for 96.229.206.91 at 2014-09-26 23:50:22 +0000
+2014-09-26T23:50:22.280757+00:00 app[web.1]:     6:     <%= form_for(@user) do |f| %>
+2014-09-26T23:50:22.280768+00:00 app[web.1]:   app/views/users/new.html.erb:6:in `_app_views_users_new_html_erb___607673999602742100_69933730431660'
+2014-09-26T23:50:22.280770+00:00 app[web.1]: 
+2014-09-26T23:50:22.280765+00:00 app[web.1]:     11:       <%= f.text_field :name %>
+2014-09-26T23:50:22.283911+00:00 heroku[router]: at=info method=GET path="/signup" host=priegnym.herokuapp.com request_id=b1463e95-e8a9-481f-9099-882e475a8646 fwd="96.229.206.91" dyno=web.1 connect=4ms service=885ms status=500 bytes=1008
+2014-09-26T23:50:26.928267+00:00 app[web.1]: Started GET "/about" for 96.229.206.91 at 2014-09-26 23:50:26 +0000
+2014-09-26T23:50:26.965331+00:00 app[web.1]:   Rendered static_pages/about.html.erb within layouts/application (0.8ms)
+2014-09-26T23:50:26.970200+00:00 app[web.1]:   Rendered layouts/_header.html.erb (1.1ms)
+2014-09-26T23:50:26.974824+00:00 app[web.1]: Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+2014-09-26T23:50:26.981870+00:00 heroku[router]: at=info method=GET path="/about" host=priegnym.herokuapp.com request_id=657b2b4b-c7a5-4c7d-9b72-0ef66a87dce2 fwd="96.229.206.91" dyno=web.1 connect=2ms service=65ms status=200 bytes=2177
+2014-09-26T23:50:26.951200+00:00 app[web.1]: Processing by StaticPagesController#about as HTML
+2014-09-26T23:50:26.968888+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T23:50:26.970882+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.5ms)
+2014-09-26T23:50:29.064447+00:00 app[web.1]: Started GET "/contact" for 96.229.206.91 at 2014-09-26 23:50:29 +0000
+2014-09-26T23:50:29.071869+00:00 app[web.1]:   Rendered static_pages/contact.html.erb within layouts/application (0.5ms)
+2014-09-26T23:50:29.074641+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.8ms)
+2014-09-26T23:50:29.075725+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+2014-09-26T23:50:29.073641+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T23:50:29.069550+00:00 app[web.1]: Processing by StaticPagesController#contact as HTML
+2014-09-26T23:50:29.075402+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.4ms)
+2014-09-26T23:50:29.079834+00:00 heroku[router]: at=info method=GET path="/contact" host=priegnym.herokuapp.com request_id=0bf78f8b-16dc-4bb4-baab-2ceb53578228 fwd="96.229.206.91" dyno=web.1 connect=1ms service=22ms status=200 bytes=2048
+2014-09-26T23:50:36.226897+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=a64c9487-aaf2-42b7-9099-97dfb73bee8a fwd="96.229.206.91" dyno=web.1 connect=1ms service=22ms status=304 bytes=400
+2014-09-26T23:50:36.216809+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 23:50:36 +0000
+2014-09-26T23:50:36.222570+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+2014-09-26T23:50:36.224441+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.4ms)
+2014-09-26T23:50:36.225066+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+2014-09-26T23:50:36.221264+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T23:50:36.224910+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T23:50:36.223907+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T23:50:38.227526+00:00 app[web.1]: Started GET "/signup" for 96.229.206.91 at 2014-09-26 23:50:38 +0000
+2014-09-26T23:50:38.240922+00:00 app[web.1]:   Rendered users/new.html.erb within layouts/application (1.4ms)
+2014-09-26T23:50:38.243018+00:00 app[web.1]: 
+2014-09-26T23:50:38.243021+00:00 app[web.1]: ActionView::Template::Error (Missing partial shared/error_messages with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+2014-09-26T23:50:38.243023+00:00 app[web.1]:   * "/app/app/views"
+2014-09-26T23:50:38.243024+00:00 app[web.1]: ):
+2014-09-26T23:50:38.243026+00:00 app[web.1]:     5:   <div class="span6 offset3">
+2014-09-26T23:50:38.243027+00:00 app[web.1]:     6:     <%= form_for(@user) do |f| %>
+2014-09-26T23:50:38.243029+00:00 app[web.1]:     7: 	  
+2014-09-26T23:50:38.243033+00:00 app[web.1]:     10:       <%= f.label :name %>
+2014-09-26T23:50:38.243030+00:00 app[web.1]:     8: 	  <%= render 'shared/error_messages' %>
+2014-09-26T23:50:38.243032+00:00 app[web.1]:     9: 
+2014-09-26T23:50:38.243038+00:00 app[web.1]:   app/views/users/new.html.erb:6:in `_app_views_users_new_html_erb___607673999602742100_69933730431660'
+2014-09-26T23:50:38.243035+00:00 app[web.1]:     11:       <%= f.text_field :name %>
+2014-09-26T23:50:38.243039+00:00 app[web.1]: 
+2014-09-26T23:50:38.243036+00:00 app[web.1]:   app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___607673999602742100_69933730431660'
+2014-09-26T23:50:38.243041+00:00 app[web.1]: 
+2014-09-26T23:50:38.241129+00:00 app[web.1]: Completed 500 Internal Server Error in 6ms
+2014-09-26T23:50:38.234945+00:00 app[web.1]: Processing by UsersController#new as HTML
+2014-09-26T23:50:38.244749+00:00 heroku[router]: at=info method=GET path="/signup" host=priegnym.herokuapp.com request_id=71acf315-c524-4cac-869d-6bc114c2f600 fwd="96.229.206.91" dyno=web.1 connect=1ms service=39ms status=500 bytes=1008
+2014-09-26T23:54:11.229087+00:00 heroku[router]: at=info method=GET path="/" host=priegnym.herokuapp.com request_id=d79fd10a-50a2-479e-be22-17c7049ad8cc fwd="96.229.206.91" dyno=web.1 connect=10ms service=16ms status=304 bytes=400
+2014-09-26T23:54:11.222283+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+2014-09-26T23:54:11.221459+00:00 app[web.1]:   Rendered layouts/_header.html.erb (0.6ms)
+2014-09-26T23:54:11.214505+00:00 app[web.1]: Started GET "/" for 96.229.206.91 at 2014-09-26 23:54:11 +0000
+2014-09-26T23:54:11.219253+00:00 app[web.1]:   Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+2014-09-26T23:54:11.218122+00:00 app[web.1]: Processing by StaticPagesController#home as HTML
+2014-09-26T23:54:11.220694+00:00 app[web.1]:   Rendered layouts/_shim.html.erb (0.0ms)
+2014-09-26T23:54:11.221980+00:00 app[web.1]:   Rendered layouts/_footer.html.erb (0.3ms)
+2014-09-26T23:54:12.962676+00:00 heroku[router]: at=info method=GET path="/signup" host=priegnym.herokuapp.com request_id=8904291a-5f41-449c-ae1b-72030298fd9b fwd="96.229.206.91" dyno=web.1 connect=1ms service=11ms status=500 bytes=1008
+2014-09-26T23:54:12.958737+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
+2014-09-26T23:54:12.960524+00:00 app[web.1]: 
+2014-09-26T23:54:12.960528+00:00 app[web.1]:   * "/app/app/views"
+2014-09-26T23:54:12.960529+00:00 app[web.1]: ):
+2014-09-26T23:54:12.957961+00:00 app[web.1]: Processing by UsersController#new as HTML
+2014-09-26T23:54:12.958665+00:00 app[web.1]:   Rendered users/new.html.erb within layouts/application (1.2ms)
+2014-09-26T23:54:12.953720+00:00 app[web.1]: Started GET "/signup" for 96.229.206.91 at 2014-09-26 23:54:12 +0000
+2014-09-26T23:54:12.960526+00:00 app[web.1]: ActionView::Template::Error (Missing partial shared/error_messages with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+2014-09-26T23:54:12.960536+00:00 app[web.1]:     10:       <%= f.label :name %>
+2014-09-26T23:54:12.960535+00:00 app[web.1]:     9: 
+2014-09-26T23:54:12.960533+00:00 app[web.1]:     7: 	  
+2014-09-26T23:54:12.960530+00:00 app[web.1]:     5:   <div class="span6 offset3">
+2014-09-26T23:54:12.960531+00:00 app[web.1]:     6:     <%= form_for(@user) do |f| %>
+2014-09-26T23:54:12.960534+00:00 app[web.1]:     8: 	  <%= render 'shared/error_messages' %>
+2014-09-26T23:54:12.960556+00:00 app[web.1]: 
+2014-09-26T23:54:12.960558+00:00 app[web.1]: 
+2014-09-26T23:54:12.960541+00:00 app[web.1]:   app/views/users/new.html.erb:6:in `_app_views_users_new_html_erb___607673999602742100_69933730431660'
+2014-09-26T23:54:12.960538+00:00 app[web.1]:     11:       <%= f.text_field :name %>
+2014-09-26T23:54:12.960539+00:00 app[web.1]:   app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___607673999602742100_69933730431660'
