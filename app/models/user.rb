@@ -1,17 +1,8 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
+  attr_protected :admin
   has_secure_password
+  has_many :microposts, dependent: :destroy
   
   #ensure email uniqueness.  Needed because not all db adapters use case-sensitive indicies
   before_save { self.email.downcase! }
@@ -27,6 +18,11 @@ class User < ActiveRecord::Base
   #validate password
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+
+  def feed
+    #This is preliminary.  See 'following users' for full implementation
+    Micropost.where("user_id = ?", id)
+  end
   
   private
     
@@ -36,4 +32,15 @@ class User < ActiveRecord::Base
     end
   
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
 

@@ -17,6 +17,7 @@ describe "UserPages" do
 
     describe "pagination" do
 
+      #slows down the tests!
       before(:all) { 30.times { FactoryGirl.create(:user) } }
       after(:all)  { User.delete_all }
 
@@ -52,11 +53,20 @@ describe "UserPages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
+
     before { visit user_path(user) }
     
     it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
-  end
+
+    describe "microposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.microposts.count) }
+    end
+  end #profile page end
   
   describe "signup page" do
     before { visit signup_path }
@@ -85,12 +95,7 @@ describe "UserPages" do
     end
 
     describe "with valid information" do
-      before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
-      end
+      before { fill_in_form("Example User", "user@example.com", "foobar") }
 
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
@@ -130,10 +135,7 @@ describe "UserPages" do
       let(:new_name) { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in_form(new_name, new_email, user.password)
         click_button "Save changes"
       end
       

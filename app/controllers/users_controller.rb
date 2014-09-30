@@ -5,10 +5,12 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page] )
   end
   
   def new
-    @user = User.new
+    signed_in? ? redirect_to(root_path) : @user = User.new
+    #@user = User.new
   end
   
   def create
@@ -43,19 +45,25 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User annihilated."
-    redirect_to users_path
+    unless current_user == User.find(params[:id])
+      User.find(params[:id]).destroy
+      flash[:success] = "User annihilated."
+      redirect_to users_path
+    else  #admin users cannot destroy themselves
+      redirect_to(root_path)
+    end
   end
 
   private
   
+=begin ==> don't need since listed in sessions_helper, which is included in app controller
     def signed_in_user
       unless signed_in?
         store_location
         redirect_to signin_path, notice: "Please sign in."
       end
     end
+=end
   
     def correct_user
       @user = User.find(params[:id])

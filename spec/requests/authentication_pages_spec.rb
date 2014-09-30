@@ -51,18 +51,26 @@ describe "Authentication" do
     
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
-      
+
+      #Exercise 9.6.3
+      describe "links for Profile and Settings do not appear" do
+        it { should_not have_link('Profile') }
+        it { should_not have_link('Settings') }
+      end
+
       describe "when attempting to visit a protected page" do
-        before do
-          visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Sign in"
-        end
+        before { sign_in(user, edit_user_path(user)) }
         
         describe "after signing in" do
           it "should render the desired protected page" do
             page.should have_selector('title', text: 'Edit user')
+          end
+        end
+
+        describe "when signing in again" do
+          before { sign_in user }
+          it "should render the default (profile) page" do
+            page.should have_selector('title', text: user.name)
           end
         end
       end #visiting protected page end
@@ -83,8 +91,23 @@ describe "Authentication" do
           before { visit users_path }
           it { should have_selector('title', text: 'Sign in') }
         end
-        
       end #Users controller end
+
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before do
+            micropost = FactoryGirl.create(:micropost)
+            delete micropost_path(micropost)
+          end
+          specify { response.should redirect_to(signin_path) }
+        end
+      end #Microposts controller end
     end # non-signed-in users end
     
     describe "as wrong user" do
@@ -114,6 +137,17 @@ describe "Authentication" do
         specify { response.should redirect_to(root_path) }
       end
     end #non-admin user end
+
+    describe "admin users" do
+      let(:admin) { FactoryGirl.create(:admin) }
+
+      before { sign_in admin }
+
+      describe "cannot destroy themselves" do
+        before { delete user_path(admin) }
+        specify { response.should redirect_to(root_path) }
+      end
+    end #admin user end
 
   end #authorization end
     
