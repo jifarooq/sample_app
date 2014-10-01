@@ -91,6 +91,17 @@ describe "Authentication" do
           before { visit users_path }
           it { should have_selector('title', text: 'Sign in') }
         end
+
+        describe "visiting the following page" do
+          before { visit following_user_path(user) }
+          it { should have_selector('title', text: 'Sign in') }
+        end
+
+        describe "visiting the followers page" do
+          before { visit followers_user_path(user) }
+          it { should have_selector('title', text: 'Sign in') }
+        end
+        
       end #Users controller end
 
       describe "in the Microposts controller" do
@@ -108,6 +119,19 @@ describe "Authentication" do
           specify { response.should redirect_to(signin_path) }
         end
       end #Microposts controller end
+
+      describe "in the Relationships controller" do
+        describe "submitting to the create action" do
+          before { post relationships_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the create action" do
+          before { delete relationship_path(1) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end #Relationships controller end
+      
     end # non-signed-in users end
     
     describe "as wrong user" do
